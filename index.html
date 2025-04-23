@@ -407,7 +407,7 @@
 
 
 </section>
-
+</header>
     <style>
         html, body {
             font-family: "Open Sans", sans-serif;
@@ -463,8 +463,6 @@
         </div>
     </div>
 
-
-
 <script src="assets/js/lunaradio.js"></script>
 <script>
 $("#player").lunaradio({
@@ -507,8 +505,7 @@ userinterface: "big",
 </script>
 
 <script>
-
-        function relogio() {
+	function relogio() {
             let elementoID = document.getElementById('hora');
             let horalocal = new Date().toLocaleTimeString('pt-br');
             elementoID.innerHTML = horalocal;
