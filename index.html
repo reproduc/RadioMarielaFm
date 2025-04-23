@@ -508,46 +508,6 @@ userinterface: "big",
 
 <script>
 
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('installPopup').style.display = 'block';
-        });
-
-        document.getElementById('installAppButton').addEventListener('click', async () => {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('installPopup').style.display = 'none';
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log(`User response to the install prompt: ${outcome}`);
-                deferredPrompt = null;
-            }
-        });
-
-        document.getElementById('overlay').addEventListener('click', () => {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('installPopup').style.display = 'none';
-        });
-
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        }
-
-        if (isIOS()) {
-            document.getElementById('installAppButton').style.display = 'none';
-            document.getElementById('iosInstructions').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('installPopup').style.display = 'block';
-        }
-    </script>
-
-
-
-	
         function relogio() {
             let elementoID = document.getElementById('hora');
             let horalocal = new Date().toLocaleTimeString('pt-br');
