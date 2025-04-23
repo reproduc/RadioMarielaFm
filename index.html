@@ -41,7 +41,24 @@
 <link href="assets/css/banner5c3d.html?v=795" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style-playlist376c.css?v=682">
 <style type="text/css">
-  
+          /* Estilos para el botón de instalación */
+        #installButtonWrapper {
+            position: relative; 
+            top: 0; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 10; 
+        }
+
+        #installButton {
+            width: 150px; 
+            cursor: pointer; 
+            transition: transform 0.2s; 
+        }
+
+        #installButton:hover {
+            transform: scale(1.1); 
+        }
 
 #fondo {
  width: 100%;
